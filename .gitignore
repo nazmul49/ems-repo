@@ -1,0 +1,9 @@
+EMS_Server/.mvn/
+EMS_Server/.settings/
+EMS_Server/.classpath
+EMS_Server/.project
+EMS_Server/target/
+EMS_Server/.idea/
+
+# EMS Client App
+EMS_Client/node_modules/
