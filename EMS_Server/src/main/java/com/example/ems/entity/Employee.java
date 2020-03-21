@@ -3,27 +3,22 @@
  */
 package com.example.ems.entity;
 
-import java.util.Date;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 import com.example.ems.constants.Gender;
 import com.example.ems.constants.ProgrammingLanguage;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import lombok.Data;
-
 /**
  * @author Nazmul Hasan
  *
  */
-
-@Data
 @Entity
 public class Employee {
 
@@ -44,11 +39,11 @@ public class Employee {
 	@Email
 	private String email;
 
-//	@NotEmpty(message = "Gender is required field")
+	@NotNull
 	@JsonProperty("gender")
 	private Gender gender;
 
-//	@NotEmpty(message = "Date of birth is required field")
+	@NotEmpty(message = "Date of birth is required field")
 	@JsonProperty("date_of_birth")
 	private String dob;
 

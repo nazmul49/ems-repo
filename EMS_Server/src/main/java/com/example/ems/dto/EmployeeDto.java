@@ -2,15 +2,12 @@ package com.example.ems.dto;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 import com.example.ems.constants.Gender;
 import com.example.ems.constants.ProgrammingLanguage;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import lombok.Data;
-import lombok.ToString;
-
-@ToString
 public class EmployeeDto {
 	private Integer id;
 
@@ -27,11 +24,11 @@ public class EmployeeDto {
 	@Email
 	private String email;
 
-	// @NotNull
+	@NotNull
 	@JsonProperty("gender")
 	private Gender gender;
 
-//	@NotEmpty(message = "Date of birth is required field")
+	@NotEmpty(message = "Date of birth is required field")
 	@JsonProperty("date_of_birth")
 	private String dob;
 

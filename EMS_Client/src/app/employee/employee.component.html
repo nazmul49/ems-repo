@@ -101,8 +101,7 @@
 							<div class="form-group">
 								<label>Gender</label>
 								<select id="deviceSelectInEdit" class="form-control" formControlName="gender"
-									[class.is-invalid]="employeeForm.get('gender').invalid && employeeForm.get('gender').touched"
-									(change)="onDeviceChange($event)">
+									[class.is-invalid]="employeeForm.get('gender').invalid && employeeForm.get('gender').touched">
 									<option value="null" disabled>Please select your gender</option>
 									<option *ngFor="let key of genderTypeOptions" [value]="key"
 										[label]="_genderTypes[key]"></option>
@@ -249,7 +248,7 @@
 					</div>
 
 					<hr>
-					<button type="submit" class="btn btn-primary" data-dismiss="modal" [disabled]="employeeForm.invalid">Update</button>
+					<button type="submit" class="btn btn-primary"  [disabled]="employeeForm.invalid">Update</button>
 					<button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
 				</form>
 			</div>
