@@ -1,0 +1,39 @@
+.page-content {
+  padding-left: 175px;
+  padding-top: 15px;
+}
+
+.action {
+  text-align: center;
+}
+
+.action a:hover {
+  cursor: pointer;
+  color: blue;
+}
+
+.pagination {
+  margin-top: 5px;
+}
+
+tr:last-child {
+  border-bottom: 1px solid #dee2e6;
+}
+
+.total-count {
+  margin: 2px 0px 0px 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.rounded-imgae {
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+}
+
+.conductor-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}

@@ -1,0 +1,66 @@
+[
+    {
+        "id": 1,
+        "name": "tab",
+        "email": "anisul.hoque@bjitgroup.com",
+        "imei": "aee209b255f65f97",
+        "callerId": "1000",
+        "imageUrl": "/images/guide01.png"
+    },
+    {
+        "id": 2,
+        "name": "BJIT/JSW/PAD-04",
+        "email": "mohiuddin.bhuiyan2@bjitgroup.com",
+        "imei": "7f68ded100b045de",
+        "callerId": "1000",
+        "imageUrl": "/images/guide01.png"
+    },
+    {
+        "id": 3,
+        "name": "BJIT-TAB-7",
+        "email": "al.maruf@bjitgroup.com",
+        "imei": "7d9b06487d8aa985",
+        "callerId": "2000",
+        "imageUrl": "/images/guide01.png"
+    },
+    {
+        "id": 6,
+        "name": "Anisul Hoque",
+        "email": "anisul.hoque@bjitgroup.com",
+        "imei": "d005aff79f57754f",
+        "callerId": "1002",
+        "imageUrl": "/images/guide01.png"
+    },
+    {
+        "id": 7,
+        "name": "HUAWEI_T3",
+        "email": "anisul.hoque@bjitgroup.com",
+        "imei": "XMRNU17520201313",
+        "callerId": "5005",
+        "imageUrl": "/images/guide01.png"
+    },
+    {
+        "id": 8,
+        "name": "HUAWEI_T5",
+        "email": "anisul.hoque@bjitgroup.com",
+        "imei": "V4QBB18B10202525",
+        "callerId": "5006",
+        "imageUrl": "/images/guide01.png"
+    },
+    {
+        "id": 9,
+        "name": "SamsungGalaxyTab",
+        "email": "anisul.hoque@bjitgroup.com",
+        "imei": "R54KB017G2",
+        "callerId": "5007",
+        "imageUrl": "/images/guide01.png"
+    },
+    {
+        "id": 10,
+        "name": "HUAWEI_T5-BD",
+        "email": "anisul.hoque@bjitgroup.com",
+        "imei": "85f700dce6bd12d1",
+        "callerId": "5008",
+        "imageUrl": "/images/guide01.png"
+    }
+]
