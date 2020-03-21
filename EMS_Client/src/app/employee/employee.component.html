@@ -32,7 +32,7 @@
 								<td>{{employee.contact_number}}</td>
 								<td>{{employee.email}}</td>
 								<td>{{employee.gender}}</td>
-								<td>{{employee.date_of_birth | date}}</td>
+								<td>{{employee.date_of_birth | date: 'dd/MM/yyyy'}}</td>
 								<td>{{employee.programming_language}}</td>
 								<td>{{employee.present_address}}</td>
 								<td class="action">
@@ -102,11 +102,11 @@
 
 							<div class="form-group">
 								<label>Gender</label>
-								<select id="deviceSelectInEdit" class="form-control" formControlName="gender"
+								<select class="form-control" formControlName="gender"
 									[class.is-invalid]="employeeForm.get('gender').invalid && employeeForm.get('gender').touched">
 									<option value="null" disabled>Please select your gender</option>
-									<option *ngFor="let key of genderTypeOptions" [value]="key"
-										[label]="_genderTypes[key]"></option>
+									<option *ngFor="let key of genderTypeOptions;" [value]="key"
+										[label]="genderTypes[key]"></option>
 								</select>
 								<small class="text-danger"
 									[class.d-none]="employeeForm.get('gender').valid || employeeForm.get('gender').untouched">
@@ -126,9 +126,11 @@
 
 							<div class="form-group">
 								<label>Programming Language</label>
-								<select id="deviceSelectInEdit" class="form-control"
+								<select class="form-control"
 									formControlName="programmingLanguage">
-									<option value="null" disabled>Please select your gender</option>
+									<option value="null">Please select your preferable language</option>
+									<option *ngFor="let key of programmingLanguageTypeOptions;" [value]="key"
+										[label]="programmingLanguageTypes[key]"></option>
 								</select>
 							</div>
 
@@ -153,7 +155,7 @@
 					</div>
 
 					<hr>
-					<button type="submit" class="btn btn-primary" data-dismiss="modal"
+					<button type="submit" class="btn btn-primary"
 						[disabled]="employeeForm.invalid">Submit</button>
 					<button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
 
@@ -213,11 +215,11 @@
 
 							<div class="form-group">
 								<label>Gender</label>
-								<select id="deviceSelectInEdit" class="form-control" formControlName="gender"
+								<select class="form-control" formControlName="gender"
 									[class.is-invalid]="employeeForm.get('gender').invalid && employeeForm.get('gender').touched">
 									<option value="null" disabled>Please select your gender</option>
-									<option *ngFor="let key of genderTypeOptions" [value]="key"
-										[label]="_genderTypes[key]"></option>
+									<option *ngFor="let key of genderTypeOptions;" [value]="key"
+										[label]="genderTypes[key]"></option>
 								</select>
 								<small class="text-danger"
 									[class.d-none]="employeeForm.get('gender').valid || employeeForm.get('gender').untouched">
@@ -237,9 +239,11 @@
 
 							<div class="form-group">
 								<label>Programming Language</label>
-								<select id="deviceSelectInEdit" class="form-control"
+								<select class="form-control"
 									formControlName="programmingLanguage">
-									<option value="null" disabled>Please select your gender</option>
+									<option value="null">Please select your preferable language</option>
+									<option *ngFor="let key of programmingLanguageTypeOptions;" [value]="key"
+										[label]="programmingLanguageTypes[key]"></option>
 								</select>
 							</div>
 
@@ -251,7 +255,7 @@
 					</div>
 
 					<hr>
-					<button type="submit" class="btn btn-primary" data-dismiss="modal"
+					<button type="submit" class="btn btn-primary"
 						[disabled]="employeeForm.invalid">Update</button>
 					<button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
 				</form>

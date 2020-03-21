@@ -20,7 +20,10 @@ export class EmployeeComponent implements OnInit {
   public searchText;
   public uploadedImageUrl: any = null;
 
+  public genderTypes = ["MALE", "FMALE", "OTHERS"];
+  public programmingLanguageTypes = ["JAVA", "PHP", "JAVASCRIPT", "KOTLIN"];
   public genderTypeOptions = [];
+  public programmingLanguageTypeOptions = [];
 
   public imageBaseUrl = AppConstants.IMAGE_BASE_URL;
   public defaultImageUrl = AppConstants.DEFAULT_IMAGE_URL;
@@ -35,14 +38,15 @@ export class EmployeeComponent implements OnInit {
     private formBuilder: FormBuilder) { }
 
   ngOnInit() {
-    this.genderTypeOptions = Object.keys(this._genderTypes);
+    this.genderTypeOptions = Object.keys(this.genderTypes);
+    this.programmingLanguageTypeOptions = Object.keys(this.programmingLanguageTypes);
 
     this.getEmployeeList();
 
     this.employeeForm = this.formBuilder.group({
       id: [null],
       name: [null, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]],
-      contactNumber: [null, [Validators.required, Validators.minLength(1), Validators.maxLength(11)]],
+      contactNumber: [null, [Validators.required, Validators.minLength(11), Validators.maxLength(14), Validators.pattern('^((\\+880-?)|0)?[0-9]{10}$')]],
       email: [null, [Validators.required, Validators.email, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
       gender: [null, [Validators.required]],
       dob: [null, [Validators.required]],
@@ -64,10 +68,14 @@ export class EmployeeComponent implements OnInit {
     /**
      * This function will work for adding and editing employee
      */
+    console.log("Hello: ", this.employeeForm.value);
+
     this._employeeService.addEmployee(this.employeeForm.value)
       .subscribe(response => {
         this.employeeForm.reset();
         this.getEmployeeList();
+        $("#addEmployeeModal").modal("hide");
+        $("#editEmployeeModal").modal("hide");
       }, error => {
         this._toastr.error(error.error.message);
       });
@@ -79,9 +87,9 @@ export class EmployeeComponent implements OnInit {
       name: employeeInfo.name,
       contactNumber: employeeInfo.contact_number,
       email: employeeInfo.email,
-      gender: employeeInfo.gender,
+      gender: employeeInfo.gender == null ? null : GenderType[employeeInfo.gender],
       dob: employeeInfo.date_of_birth,
-      programmingLanguage: employeeInfo.programming_language,
+      programmingLanguage: employeeInfo.programming_language == null ? null : ProgrammingLanguageType[employeeInfo.programming_language],
       presentAddress: employeeInfo.present_address
     });
   }
