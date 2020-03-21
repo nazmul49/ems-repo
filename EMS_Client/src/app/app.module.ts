@@ -13,12 +13,14 @@ import { SideMenuComponent } from './side-menu/side-menu.component';
 
 import { AppRoutingModule, routingComponents } from './app-routing.modules';
 import { EmployeeService } from './services/employee.service';
+import { SearchPipe } from './custom-pipes/search.pipe';
 
 @NgModule({
 	declarations: [
 		AppComponent,
 		SideMenuComponent,
-		routingComponents
+		routingComponents,
+		SearchPipe
 	],
 	imports: [
 		BrowserModule,

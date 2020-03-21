@@ -3,9 +3,11 @@
 		<h2>Employees</h2>
 		<hr>
 
-		<button class="btn btn-primary shadow mb-3" data-toggle="modal" data-target="#addEmployeeModal"
+		<button class="btn btn-primary shadow mb-2" data-toggle="modal" data-target="#addEmployeeModal"
 			(click)="employeeForm.reset();">Add New</button>
 
+		<input type="text" class="form-control shadow mb-2" [(ngModel)]="searchText"
+			placeholder="Search by name or contact number or email">
 		<div class="card shadow bg-white">
 			<div class="card-body">
 				<div class="table-responsive">
@@ -24,7 +26,7 @@
 							</tr>
 						</thead>
 						<tbody>
-							<tr *ngFor="let employee of employees; index as index;">
+							<tr *ngFor="let employee of employees | searchFilter: searchText; index as index;">
 								<td>{{ index + 1 }}</td>
 								<td>{{employee.name}}</td>
 								<td>{{employee.contact_number}}</td>
@@ -151,7 +153,8 @@
 					</div>
 
 					<hr>
-					<button type="submit" class="btn btn-primary" data-dismiss="modal" [disabled]="employeeForm.invalid">Submit</button>
+					<button type="submit" class="btn btn-primary" data-dismiss="modal"
+						[disabled]="employeeForm.invalid">Submit</button>
 					<button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
 
 				</form>
@@ -248,7 +251,8 @@
 					</div>
 
 					<hr>
-					<button type="submit" class="btn btn-primary"  [disabled]="employeeForm.invalid">Update</button>
+					<button type="submit" class="btn btn-primary" data-dismiss="modal"
+						[disabled]="employeeForm.invalid">Update</button>
 					<button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
 				</form>
 			</div>

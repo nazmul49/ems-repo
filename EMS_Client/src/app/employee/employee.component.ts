@@ -17,6 +17,7 @@ export class EmployeeComponent implements OnInit {
 
   public employees = [];
   public errorMsg;
+  public searchText;
   public uploadedImageUrl: any = null;
 
   public genderTypeOptions = [];
