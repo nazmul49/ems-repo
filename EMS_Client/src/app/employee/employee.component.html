@@ -3,11 +3,11 @@
 		<h2>Employees</h2>
 		<hr>
 
-		<button class="btn btn-primary shadow mb-2" data-toggle="modal" data-target="#addEmployeeModal"
+		<button class="btn btn-primary shadow mb-3" data-toggle="modal" data-target="#addEmployeeModal"
 			(click)="employeeForm.reset();">Add New</button>
 
 		<input type="text" class="form-control shadow mb-2" [(ngModel)]="searchText"
-			placeholder="Search by name or contact number or email">
+			placeholder="Search employee by 'name' or 'contact number' or 'email'">
 		<div class="card shadow bg-white">
 			<div class="card-body">
 				<div class="table-responsive">
@@ -96,7 +96,7 @@
 									[class.is-invalid]="employeeForm.get('email').invalid && employeeForm.get('email').touched">
 								<small class="text-danger"
 									[class.d-none]="employeeForm.get('email').valid || employeeForm.get('email').untouched">
-									Email is required
+									Please provide a valid email address
 								</small>
 							</div>
 
@@ -207,7 +207,7 @@
 									[class.is-invalid]="employeeForm.get('email').invalid && employeeForm.get('email').touched">
 								<small class="text-danger"
 									[class.d-none]="employeeForm.get('email').valid || employeeForm.get('email').untouched">
-									Email is required
+									Please provide a valid email address
 								</small>
 							</div>
 

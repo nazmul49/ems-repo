@@ -43,13 +43,11 @@ export class EmployeeComponent implements OnInit {
       id: [null],
       name: [null, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]],
       contactNumber: [null, [Validators.required, Validators.minLength(1), Validators.maxLength(11)]],
-      email: [null, [Validators.required]],
+      email: [null, [Validators.required, Validators.email, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
       gender: [null, [Validators.required]],
       dob: [null, [Validators.required]],
       programmingLanguage: [null],
       presentAddress: [null]
-      // imei: [null, [Validators.required]],
-      // callerId: [null, [Validators.required, Validators.minLength(4), Validators.maxLength(10), Validators.pattern('[0-9]*')]]
     });
   }
 
