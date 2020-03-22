@@ -3,6 +3,7 @@
  */
 package com.example.ems.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -32,9 +33,11 @@ public class Employee {
 
 	@JsonProperty("contact_number")
 	@NotEmpty(message = "Contact Number is required field")
+	@Column(unique = true)
 	private String contactNumber;
 
 	@JsonProperty("email")
+	@Column(unique = true)
 	@NotEmpty(message = "Email is required field")
 	@Email
 	private String email;

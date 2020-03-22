@@ -52,7 +52,7 @@
 
 
 <!-- add employee modal -->
-<div class="modal fade" id="addEmployeeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+<div class="modal fade" id="addEmployeeModal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
 	aria-hidden="true">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
@@ -86,7 +86,7 @@
 									[class.is-invalid]="employeeForm.get('contactNumber').invalid && employeeForm.get('contactNumber').touched">
 								<small class="text-danger"
 									[class.d-none]="employeeForm.get('contactNumber').valid || employeeForm.get('contactNumber').untouched">
-									Contact number is required
+									Please provide a valid contact number
 								</small>
 							</div>
 
@@ -166,7 +166,7 @@
 </div>
 
 <!-- edit employee info modal -->
-<div class="modal fade" id="editEmployeeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+<div class="modal fade" id="editEmployeeModal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
 	aria-hidden="true">
 	<div class="modal-dialog modal-dialog-centered" role="document">
 		<div class="modal-content">
@@ -199,7 +199,7 @@
 									[class.is-invalid]="employeeForm.get('contactNumber').invalid && employeeForm.get('contactNumber').touched">
 								<small class="text-danger"
 									[class.d-none]="employeeForm.get('contactNumber').valid || employeeForm.get('contactNumber').untouched">
-									Contact number is required
+									Please provide a valid contact number
 								</small>
 							</div>
 

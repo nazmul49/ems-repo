@@ -68,14 +68,22 @@ export class EmployeeComponent implements OnInit {
     /**
      * This function will work for adding and editing employee
      */
-    console.log("Hello: ", this.employeeForm.value);
 
     this._employeeService.addEmployee(this.employeeForm.value)
       .subscribe(response => {
         this.employeeForm.reset();
+
         this.getEmployeeList();
+
+        if (this.employeeForm.get('id').value == "null") {
+          this._toastr.success("New employee added successfully");
+        } else {
+          this._toastr.success("Employee details updated successfully");
+        }
+
         $("#addEmployeeModal").modal("hide");
         $("#editEmployeeModal").modal("hide");
+
       }, error => {
         this._toastr.error(error.error.message);
       });
